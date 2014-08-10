@@ -29,5 +29,5 @@ We used Cloudera CDH4 for Apache Hadoop, Pig, Hive, Flume and Ozzie.
 ## Architecture
 Following is 
 
-![alt tag](https://raw.github.com/hazznain/ BigData_for_Energy_Efficiency/master/images/iplatform.pdf)
+![alt tag](https://raw.github.com/hazznain/ BigData_for_Energy_Efficiency/master/images/iplatform.png)
 
