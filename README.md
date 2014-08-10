@@ -11,8 +11,6 @@ This project is an endeavour to provide a proof of concept for using Big Data al
 5. Predicting daily energy consumption of various household devices on the basis of previous consumption pattern.
 6. Collecting Twitter data for energy related topics using keyword filtering. 
 
-
-
 Following is the list of tools used for Big Data, advanced analytics and results visualization.
 
 * Apache Hadoop
