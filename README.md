@@ -17,6 +17,7 @@ Following is the list of tools used for Big Data, advanced analytics and results
 * Apache Hive
 * Apache oozie
 * Cloudera Impala
+* MongoDB (Optional)
 * R Programming for Statistical Computing
 * Weka 
 * Tableau Public 
