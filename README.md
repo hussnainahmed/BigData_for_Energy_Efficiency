@@ -36,4 +36,19 @@ For using the concept presented in this proof concept in a production environmen
 
 ###
 
+git clone https://github.com/hazznain/BigData_for_Energy_Efficiency
+
+cd BigData_for_Energy_Efficiency/
+
+unzip data.zip
+
+hadoop fs -ls
+ 
+pig -f energy_consumption_matrix.pig
+
+hadoop fs -copyToLocal energy_consumption_matrix  .
+
+cd energy_consumption_matrix
+
+more part-r-00000
 
