@@ -4,9 +4,9 @@
 *******************************************
 *******************************************/ 
 REGISTER /usr/lib/pig/piggybank.jar;
-REGISTER /home/cloudera/joda-time-2.4/joda-time-2.4.jar;
-DEFINE CustomFormatToISO org.apache.pig.piggybank.evaluation.datetime.convert.CustomFormatToISO();
-DEFINE ISOToUnix org.apache.pig.piggybank.evaluation.datetime.convert.ISOToUnix();
+-- REGISTER /home/cloudera/joda-time-2.4/joda-time-2.4.jar;
+-- DEFINE CustomFormatToISO org.apache.pig.piggybank.evaluation.datetime.convert.CustomFormatToISO();
+-- DEFINE ISOToUnix org.apache.pig.piggybank.evaluation.datetime.convert.ISOToUnix();
 rmf energy_consumption_matrix;
 energy = LOAD 'hld_masked.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',') AS (dev:int, building:chararray, meternumb:int ,type:chararray, date:chararray,hr:int,consumption:int);
 NARM = FILTER energy BY (building matches 'Building.*');
