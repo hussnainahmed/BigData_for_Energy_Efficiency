@@ -5,7 +5,7 @@
 *********************************************
 *********************************************/ 
 
-Loading the required jar files
+-- Loading the required jar files
 REGISTER /usr/lib/pig/piggybank.jar;
 -- REGISTER /home/cloudera/joda-time-2.4/joda-time-2.4.jar;
 -- DEFINE CustomFormatToISO org.apache.pig.piggybank.evaluation.datetime.convert.CustomFormatToISO();
@@ -33,7 +33,7 @@ avg_daily_elec_months = FOREACH avg_daily_elec GENERATE group.building,avg_hourl
 avg_monthly_elec_group = GROUP avg_daily_elec_months BY (building,month); 
 avg_monthly_elec = FOREACH avg_monthly_elec_group  GENERATE group.building,group.month, AVG(avg_daily_elec_months.avg_hourly_consumption) AS avg_monthly_consumption;
 
--- removing the electricity consumption values for December as only a few day data was available
+-- Removing the electricity consumption values for December as only a few day data was available
 monthly_elec = FILTER avg_monthly_elec BY month!=12;
 
 -- Aggregating the data to get average hourly electricity for heating consumption per day per building.
@@ -45,7 +45,7 @@ avg_daily_heat_months = FOREACH avg_daily_heat GENERATE group.building,avg_hourl
 avg_monthly_heat_group = GROUP avg_daily_heat_months BY (building,month); 
 avg_monthly_heat = FOREACH avg_monthly_heat_group  GENERATE group.building,group.month, AVG(avg_daily_heat_months.avg_hourly_consumption) AS avg_monthly_consumption;
 
--- removing the electricity consumption values for December as only a few day data was available
+-- Removing the electricity consumption values for December as only a few day data was available
 monthly_heat = FILTER avg_monthly_heat BY month!=12;
 
 -- Joining the electricity and electricity consumed for heating tables to form the energy consumption matrix
