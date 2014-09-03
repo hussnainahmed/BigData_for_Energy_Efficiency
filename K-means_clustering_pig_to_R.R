@@ -1,3 +1,18 @@
+#############################################################################################
+########  R - Script for performing Cluster Analysis on energy consumption data##############
+#############################################################################################
+########## For this R script, data pre-processing is done using Apache Pig###################
+#############################################################################################
+#This script requires two data sets (i) Energy Consumption data in form energy consumption ##
+# matrix that can be produced using Apache Pig scrit "energy_consumption_matrix.pig" or by ##
+#using unix shell script "hld.sh". These both scripts are available in the respository ######
+# "BigData_for_Energy_Efficiency" for the project. (ii) Buidling Area information also ######
+# available with the data.zip inside main repository. The output of this script is a data####
+#matrix with average hourly energy effeciency values per month per building along with the###
+#respective cluster number corresponding to the energy effeiciency class#####################
+#############################################################################################
+
+
 # function() for adding area information to energy consumption matrix and calculating energy effeciency
 add_area <- function (address_file = "C:/IDBM/Sentiment Analysis/CIVIS/Data/vtt/hld_addresses_area.csv",data= energy_matrix){
        
