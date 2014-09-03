@@ -4,7 +4,7 @@
 ########## For this R script, data pre-processing is done using Apache Pig###################
 #############################################################################################
 #This script requires two data sets (i) Energy Consumption data in form energy consumption ##
-# matrix that can be produced using Apache Pig scrit "energy_consumption_matrix.pig" or by ##
+# matrix that can be produced using Apache Pig scritp "energy_consumption_matrix.pig" or by #
 #using unix shell script "hld.sh". These both scripts are available in the respository ######
 # "BigData_for_Energy_Efficiency" for the project. (ii) Buidling Area information also ######
 # available with the data.zip inside main repository. The output of this script is a data####
@@ -82,7 +82,6 @@ t_string <- format(Sys.time(), format = "%Y-%j-%H%M%S")
 energy_file <- file.path(path, paste0("/","energy_classes",t_string, appendage,sep="")) 
 write.table(main_matrix_k4, file = energy_file,row.names=FALSE)
 
-# The results can be visualized using the output data or file
-
+# The results can be visualized using the output data or file. For our analysis we used Tableau to visualize the results.
 
         
