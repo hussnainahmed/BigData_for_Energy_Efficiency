@@ -34,21 +34,25 @@ For this proof of concept or any demo use Cloudera CDH4 quick virtual machine ca
 
 For using the concept presented in this proof concept in a production environment, We recommend that you install Cloudera CDH 4.0 in pseudo distributed single node or multi node modes. We found this very helpful step by step instruction of installing CDH4 published by AVINASH KUMAR SINGH [Step by step guide for installing and configuring CDH4](https://docs.google.com/file/d/0Bx6N95pJhrROblJiaEJ0dHpwVmc/edit). Detailed cloudera documentation are official via their official documentation pages,[Ways to install CDH4](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH4/4.2.0/CDH4-Installation-Guide/cdh4ig_topic_4_2.html).
 
-###
+### Using Apache Pig and R scripts to classify buildings on basis of energy effeciency
 
-git clone https://github.com/hazznain/BigData_for_Energy_Efficiency
+Following steps can be used to analyze the data for given use cases. These steps can be used with CDH4 in any configuration. We have tested it using Cloudera CDH4 quick VM. 
 
-cd BigData_for_Energy_Efficiency/
+1. Download material in this reposiroty using following command. (Git installation is a pre-requisite)
 
-unzip data.zip
+`git clone https://github.com/hazznain/BigData_for_Energy_Efficiency`
 
-hadoop fs -ls
+`cd BigData_for_Energy_Efficiency/`
+
+`unzip data.zip`
+
+`hadoop fs -ls`
  
-pig -f energy_consumption_matrix.pig
+`pig -f energy_consumption_matrix.pig`
 
-hadoop fs -copyToLocal energy_consumption_matrix  .
+`hadoop fs -copyToLocal energy_consumption_matrix ` .
 
-cd energy_consumption_matrix
+`cd energy_consumption_matrix`
 
-more part-r-00000
+`more part-r-00000`
 
