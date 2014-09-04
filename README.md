@@ -42,9 +42,21 @@ Following steps can be used to analyze the data for given use cases. These steps
 
 `git clone https://github.com/hazznain/BigData_for_Energy_Efficiency`
 
+2. Extract and copy the data to HDFS
+
 `cd BigData_for_Energy_Efficiency/`
 
 `unzip data.zip`
+
+`hadoop fs -copyFromLocal hld_masked.csv .`
+The above command will copy the data file with hourly consumption data to HDFS in user's home hdfs directory.
+
+To view if the file is copied correctly, use following command
+`hadoop fs -ls`
+
+3. Using the Apache Pig script to pre-process data
+
+
 
 `hadoop fs -ls`
  
