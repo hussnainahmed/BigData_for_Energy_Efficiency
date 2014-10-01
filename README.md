@@ -69,7 +69,36 @@ To view if the file is copied correctly, use following command
 File "energy_consumption_matrix.csv" can then be used as input file for R script "K-means_clustering_pig_to_R.R" for applying K-means clustering. This script needs another input file "hld_addresses_area.csv" with Real estate data of the building to calculate energy effeciency i.e. by dividing each hourly consumption value per building per month by ground floor area. 
 
 4. Now you can use R within centos of Cloudera virtual machine however in our case we use Rstudio in Windows7 environment. It is a user preference. We preffered Windows enviroment because of the next step to use Tableau to visualize the data. In any case open R or Rstudio and set current working directory to the git folder where K-means_clustering_pig_to_R.R script is available and type following command.
+
  `source("K-means_clustering_pig_to_R.R")`
 
-During execution of script you will be promted twice to select input files. On first prompt please select "energy_consumption_matrix.csv" and on second prompt select "hld_addresses_area.csv". After the execution of script an output file "energy_classes" with appended timestap in format "%Y-%j-%H%M%S" e.g. "energy_classes2014-274-224603" should be available in current working directory.
+During execution of script you will be prompted twice to select input files. On first prompt please select "energy_consumption_matrix.csv" and on second prompt select "hld_addresses_area.csv". After the execution of script an output .txt file "energy_classes" with appended timestap in format "%Y-%j-%H%M%S" e.g. "energy_classes2014-274-224603" should be available in current working directory.
+
+The output file should have following columns 
+
+"building" - Building Lablel masking the building name and address.
+
+"area" - Ground Floor Area of the building in metere squares.
+
+"month"  - Name of the month 
+
+"elec_Wh_per_m2" - Electricity , energy effeciency in watt hours per meter square.
+
+"heat_Wh_per_m2" - Electricity used for heating , energy effeciency in watt hours per meter square
+
+"cluster"  - Assigned cluster number by K-means algorithms. Please note that we are using predefined K value of 4 because we wanted to classify buildings into four groups i.e. corresponding to low, Average low, Average High, and High effeciency.
+
+
+### Visualizng the results with Tableau Public 
+
+1. Open Tableau public and click open data. Select the data out file <energy_classes%Y-%j-%H%M%S.txt>.
+2. We used Tableau Public v8.2. It is capable of identifying the field separator itself but in case of some old version you may need to give "\t" or tab as a field seperator.
+3. Then press go to worksheet.
+4. In the worksheet. Ensure that month and building values are in Dimension list on left hand side panel. While rest of the values should be in Mesaure list.
+5. Drag and drop elec_wh_per_m2 to Columns, while heat_Wh_per_m2 to Rows in the graph area.
+6. Size and color on basis of assigned K-means cluster values.
+7. Put filters of your choice like in our case we used months and buildings as filters to see the beahviour of building in each month.
+8. Build a dashboards and thats it.
+
+A sample dashboard is available as.
 
