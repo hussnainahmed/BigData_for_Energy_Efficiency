@@ -14,7 +14,7 @@
 
 
 # function() for adding area information to energy consumption matrix and calculating energy effeciency
-add_area <- function (address_file = "C:/IDBM/Sentiment Analysis/CIVIS/Data/vtt/hld_addresses_area.csv",data= energy_matrix){
+add_area <- function (address_file=realestate_file, data= energy_matrix){
        
         # reading the file with area information
         address <- read.csv(address_file,header=TRUE, sep=",")
@@ -50,6 +50,7 @@ colnames(data) <- c("building","month","elec_consumption","heat_consumption")
 energy_matrix <- data[data$elec_consumption > 0 & data$heat_consumption > 0,]
 
 # calling the add_area() function to add area information and calculate energy effeciencies.
+realestate_file <- file.choose()
 energy <- add_area()
 
 
@@ -69,11 +70,11 @@ results = kmeans(input,4)
 # Adding the calculated clustering information back to energy effeciency matrix for visualization purpose 
 building <- c(energy$building)
 month <- c(energy$month)
-area <- c(round(as.numeric(energy$floor_area),1))
+area <- c(round(as.numeric(energy$area),1))
 elec_Wh_per_m2 <- c(round(as.numeric(energy$elec_Wh_per_m2),1))
 heat_Wh_per_m2 <- c(round(as.numeric(energy$heat_Wh_per_m2),1))
 cluster <- c(results$cluster)
-main_matrix_k4 <- data.frame(building,month,elec_Wh_per_m2,heat_Wh_per_m2,cluster)
+main_matrix_k4 <- data.frame(building,area,month,elec_Wh_per_m2,heat_Wh_per_m2,cluster)
 
 # Storing the resulting data into a flat file with time stamp to keep track 
 path <- getwd() 
