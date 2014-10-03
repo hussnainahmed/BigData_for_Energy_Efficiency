@@ -92,7 +92,7 @@ The output file should have following columns
 
 ### Visualizng the results with Tableau Public 
 
-1. Open Tableau public and click open data. Select the data out file <energy_classes%Y-%j-%H%M%S.txt>.
+1. Open Tableau public and click open data. Select the data output file from last step ofprevious section i.e. <energy_classes%Y-%j-%H%M%S.txt> file.
 2. We used Tableau Public v8.2. It is capable of identifying the field separator itself but in case of some old version you may need to give "\t" or tab as a field seperator.
 3. Then press go to worksheet.
 4. In the worksheet. Ensure that month and building values are in Dimension list on left hand side panel. While rest of the values should be in Mesaure list.
