@@ -91,7 +91,7 @@ The output file should have following columns
 
 The output graph should look like this
 
-![alt tag](https://github.com/hazznain/BigData_for_Energy_Efficiency/blob/master/images/K-means.png)
+![alt tag](https://github.com/hazznain/BigData_for_Energy_Efficiency/blob/master/images/K-means.bmp)
 
 
 To create interactive graph we can use software like Tableau.
