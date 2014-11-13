@@ -89,8 +89,14 @@ The output file should have following columns
 
 "cluster"  - Assigned cluster number by K-means algorithms. Please note that we are using predefined K value of 4 because we wanted to classify buildings into four groups i.e. corresponding to low, Average low, Average High, and High effeciency.
 
+The output graph should look like this
 
-### Visualizng the results with Tableau Public 
+
+
+To create interactive graph we can use software like Tableau.
+
+
+### Interactive Visualization of the results with Tableau Public 
 
 1. Open Tableau public and click open data. Select the data output file from last step ofprevious section i.e. <energy_classes%Y-%j-%H%M%S.txt> file.
 2. We used Tableau Public v8.2. It is capable of identifying the field separator itself but in case of some old version you may need to give "\t" or tab as a field seperator.
