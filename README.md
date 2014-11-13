@@ -93,9 +93,9 @@ The output graph should look like this
 
 ![alt tag](https://github.com/hazznain/BigData_for_Energy_Efficiency/blob/master/images/K-means.bmp)
 
+Each point in the scatter plot represented by a hollow circle shows ennergy effeciency of a building in a particular month (January to November 2013). The size of the circle represents the size of the building while the color of the circle represents the respective cluster / class in terms of energy effeciency. The change in behaviour of the building within an year can be explained well by introducing some interactivity to this graph.
 
 To create interactive graph we can use software like Tableau.
-
 
 ### Interactive Visualization of the results with Tableau Public 
 
